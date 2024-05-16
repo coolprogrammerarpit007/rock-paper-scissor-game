@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROCK PAPER SCISSOR:- Game</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ********************** -->
+    <!-- ****** CSS STYLING LINK ****** -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <!-- GAME TITLE -->
+      <header class="header">
+        <h1 class="title">rock paper scissors</h1>
+      </header>
+
+      <!-- GAME BODY -->
+      <section class="game-container">
+        <div class="game-rules">
+          <h2>Choose your weapon</h2>
+          <h3>First to score 5 points win the game</h3>
+        </div>
+        <div class="game-players">
+          <div class="user">
+            <p id="userChosen">❓</p>
+            <p id="userScore">Score: <span class="user--Score">0</span></p>
+          </div>
+          <div class="computer">
+            <p id="computerChosen">❓</p>
+            <p id="computerScore">
+              Score: <span class="computer--Score">0</span>
+            </p>
+          </div>
+          <div class="computer"></div>
+        </div>
+        <div class="choices">
+          <div class="choice" id="choice-1">✊</div>
+          <div class="choice" id="choice-2">✋</div>
+          <div class="choice" id="choice-3">✌️</div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
