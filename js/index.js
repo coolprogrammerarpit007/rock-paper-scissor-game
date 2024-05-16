@@ -11,7 +11,7 @@ const computerChosen = document.getElementById(`computerChosen`);
 // state variables
 let userScore = 0;
 let computerScore = 0;
-const arr = [`rock`, `paper`, "scissor"];
+const arr = [`rock`, `paper`, `scissor`];
 const gameChoices = {
   0: `✊`,
   1: `✋`,
