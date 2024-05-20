@@ -161,3 +161,7 @@ body {
   border: 1px solid salmon;
   cursor: pointer;
 }
+
+#score--winner {
+  text-align: center;
+}

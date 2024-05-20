@@ -2,7 +2,7 @@
 
 // Getting Acess to the DOM Elements
 
-const gameResult = document.querySelector(`.game-rules`);
+const gameResult = document.getElementById(`score--winner`);
 const userChosenOption = document.getElementById(`userChosen`);
 const userScoreDisplay = document.querySelector(`.user--Score`);
 const computerChosenOption = document.getElementById(`computerChosen`);
@@ -49,15 +49,18 @@ const randomGenerateNumber = function () {
 const rockChoice = function (user, machine) {
   if (user === machine) {
     updateDOM(userScore, computerScore);
+    gameResult.textContent = `Match Tied!`;
     console.log(`Match Tied!`);
   } else if ((user === `rock`, machine === `paper`)) {
     computerScore++;
     updateDOM(userScore, computerScore);
+    gameResult.textContent = `Computer Wins!`;
     console.log(`Computer Wins!`);
   } else if ((user === `rock`, machine === `scissor`)) {
     userScore++;
     updateDOM(userScore, computerScore);
     console.log(`User Wins!`);
+    gameResult.textContent = `User Wins!`;
   }
   checkWinner();
 };
@@ -80,13 +83,16 @@ const paperChoice = function (user, machine) {
   if (user === machine) {
     updateDOM(userScore, computerScore);
     console.log(`Match Tied!`);
+    gameResult.textContent = `Match Tied!`;
   } else if ((user === `paper`, machine === `rock`)) {
     userScore++;
     updateDOM(userScore, computerScore);
+    gameResult.textContent = `User Wins!`;
     console.log(`User Wins!`);
   } else if ((user === `paper`, machine === `scissor`)) {
     computerScore++;
     updateDOM(userScore, computerScore);
+    gameResult.textContent = `Computer Wins!`;
     console.log(`Computer Wins!`);
   }
   checkWinner();
@@ -106,14 +112,17 @@ paperBtn.addEventListener(`click`, function () {
 const scissorChoice = function (user, machine) {
   if (user === machine) {
     updateDOM(userScore, computerScore);
+    gameResult.textContent = `Match Tied!`;
     console.log(`Match Tied!`);
   } else if ((user === `scissor`, machine === `rock`)) {
     computerScore++;
     updateDOM(userScore, computerScore);
+    gameResult.textContent = `Computer Wins!`;
     console.log(`Computer Wins!`);
   } else if ((user === `scissor`, machine === `paper`)) {
     userScore++;
     updateDOM(userScore, computerScore);
+    gameResult.textContent = `User Wins!`;
     console.log(`User Wins!`);
   }
   checkWinner();
@@ -147,7 +156,25 @@ const checkWinner = function () {
     console.log(`computer won the game`);
     document.getElementById(
       `winner-player`
-    ).textContent = `Computer    won the game`;
+    ).textContent = `Computer won the game`;
     updateDOMWinner();
   }
 };
+
+// getting acess to the playAgain Button
+
+const playAgainBtn = document.querySelector(`.again`);
+
+// Adding event listener to playAgain button to make it to the default settings to the page.
+playAgainBtn.addEventListener(`click`, function () {
+  document.querySelector(`.computer`).classList.remove(`hidden`);
+  document.querySelector(`.user`).classList.remove(`hidden`);
+  document.querySelector(`.winner`).classList.add(`hidden`);
+  userScore = 0;
+  computerScore = 0;
+  userScoreDisplay.textContent = userScore;
+  computerScoreDisplay.textContent = computerScore;
+  userChosenOption.textContent = `❓`;
+  computerChosenOption.textContent = `❓`;
+  gameResult.textContent = `First to score 5 points win the game`;
+});
