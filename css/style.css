@@ -21,7 +21,6 @@ body {
   margin: auto;
   width: 80%;
   height: 100vh;
-  border: 1px solid salmon;
 }
 
 /* ******************************* */
@@ -125,4 +124,18 @@ body {
   background-color: seagreen;
   color: sandybrown;
   border: 1px solid sandybrown;
+}
+
+/* ******************************** */
+/* ******************************** */
+
+/* Adding The JavaScript Functuanility */
+
+.hidden {
+  display: none;
+}
+
+.winner {
+  font-size: 4rem;
+  background-color: sandybrown;
 }
