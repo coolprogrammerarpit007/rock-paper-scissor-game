@@ -59,6 +59,7 @@ const rockChoice = function (user, machine) {
     updateDOM(userScore, computerScore);
     console.log(`User Wins!`);
   }
+  checkWinner();
 };
 
 rockBtn.addEventListener(`click`, function () {
@@ -88,6 +89,7 @@ const paperChoice = function (user, machine) {
     updateDOM(userScore, computerScore);
     console.log(`Computer Wins!`);
   }
+  checkWinner();
 };
 
 // Adding event listener to the paper button
@@ -114,6 +116,7 @@ const scissorChoice = function (user, machine) {
     updateDOM(userScore, computerScore);
     console.log(`User Wins!`);
   }
+  checkWinner();
 };
 
 scissorBtn.addEventListener(`click`, function () {
@@ -128,3 +131,23 @@ scissorBtn.addEventListener(`click`, function () {
 // ***********************************
 
 // Check Winner Functuanility to the amazon cart
+
+const updateDOMWinner = function () {
+  document.querySelector(`.computer`).classList.add(`hidden`);
+  document.querySelector(`.user`).classList.add(`hidden`);
+  document.querySelector(`.winner`).classList.remove(`hidden`);
+};
+
+const checkWinner = function () {
+  if (userScore === 5) {
+    document.getElementById(`winner-player`).textContent = `User won the game`;
+    console.log(`User won the game`);
+    updateDOMWinner();
+  } else if (computerScore === 5) {
+    console.log(`computer won the game`);
+    document.getElementById(
+      `winner-player`
+    ).textContent = `Computer    won the game`;
+    updateDOMWinner();
+  }
+};
