@@ -96,8 +96,8 @@ const updateDOM = function (
   computerChosen.innerHTML = choices[computerChoice];
 
   // updating the score
-  userScoreEl.textContent = userScore;
-  computerScoreEl.textContent = computerScore;
+  userScoreEl.textContent = `User Score: ${userScore}`;
+  computerScoreEl.textContent = `Computer Score: ${computerScore}`;
 };
 
 // Adding the event listener to all the buttons
