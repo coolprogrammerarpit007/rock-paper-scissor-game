@@ -32,7 +32,7 @@ body {
 }
 
 .header > .title {
-  font-size: 3rem;
+  font-size: 2.3rem;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.6rem;
@@ -60,7 +60,7 @@ body {
 }
 
 .game-rules > h2 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .game-rules > h3 {
@@ -85,7 +85,7 @@ body {
 
 .user p,
 .computer p {
-  font-size: 3rem;
+  font-size: 1rem;
 }
 
 #userChosen,
@@ -96,7 +96,7 @@ body {
 #userScore,
 #computerScore {
   color: #fff;
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
 /* styling of the choice buttons */
@@ -115,7 +115,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5rem;
+  font-size: 3rem;
   cursor: pointer;
   transition: all 0.7s;
 }
@@ -143,7 +143,7 @@ body {
 }
 
 .winner p {
-  font-size: 2.5rem;
+  font-size: 1rem;
   color: salmon;
   text-transform: uppercase;
 }

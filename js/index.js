@@ -105,46 +105,35 @@ const updateDOM = function (
 // calling function playRound
 rockBtn.addEventListener(`click`, (e) => {
   console.log(userScore, computerScore);
-  if (userScore < 5 && computerScore < 5) {
+  if (userScore < 4 && computerScore < 4) {
     humanChoice = userChoice(`rock`);
     computerChoice = getComputerChoice();
 
     // calling function playRound
     playRound(humanChoice, computerChoice);
   } else {
-    isPlaying = false;
-    winner.classList.remove(`hidden`);
-    userPlayer.classList.add(`hidden`);
-    machinePlayer.classList.add(`hidden`);
-    winnerPlayer.textContent = `${winnerGamePlayer} won the Game!`;
+    gameOver();
   }
 });
 paperBtn.addEventListener(`click`, (e) => {
-  if (userScore < 5 && computerScore < 5) {
+  if (userScore < 4 && computerScore < 4) {
     humanChoice = userChoice(`paper`);
     computerChoice = getComputerChoice();
 
     // calling function playRound
     playRound(humanChoice, computerChoice);
   } else {
-    isPlaying = false;
-    winner.classList.remove(`hidden`);
-    userPlayer.classList.add(`hidden`);
-    machinePlayer.classList.add(`hidden`);
-    winnerPlayer.textContent = `${winnerGamePlayer} won the Game!`;
+    gameOver();
   }
 });
 scissorBtn.addEventListener(`click`, (e) => {
-  if (userScore < 5 && computerScore < 5) {
+  if (userScore < 4 && computerScore < 4) {
     humanChoice = userChoice(`scissor`);
     computerChoice = getComputerChoice();
+
     playRound(humanChoice, computerChoice);
   } else {
-    isPlaying = false;
-    winner.classList.remove(`hidden`);
-    userPlayer.classList.add(`hidden`);
-    machinePlayer.classList.add(`hidden`);
-    winnerPlayer.textContent = `${winnerGamePlayer} won the Game!`;
+    gameOver();
   }
 });
 
@@ -170,3 +159,12 @@ const playAgain = function () {
 };
 
 playAgainBtn.addEventListener(`click`, playAgain);
+
+function gameOver() {
+  isPlaying = false;
+  winner.classList.remove(`hidden`);
+  userPlayer.classList.add(`hidden`);
+  machinePlayer.classList.add(`hidden`);
+  winnerPlayer.textContent = `${winnerGamePlayer} won the Game!`;
+  console.log(isPlaying);
+}
